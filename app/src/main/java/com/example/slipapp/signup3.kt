@@ -16,7 +16,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.ImeAction
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
@@ -24,6 +23,7 @@ import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.slipapp.ui.theme.Poppins
 import com.example.slipapp.ui.theme.SlipAppTheme
 
 
@@ -54,6 +54,7 @@ fun InputYourPassword() {
             Text(
                 text = stringResource(R.string.mbcet_password),
                 fontSize = 12.sp,
+                fontFamily = Poppins,
                 color = MaterialTheme.colors.surface,
             )
         },
@@ -97,6 +98,7 @@ fun ConfirmYourPassword() {
             Text(
                 text = stringResource(R.string.confirm_password),
                 fontSize = 12.sp,
+                fontFamily = Poppins,
                 color = MaterialTheme.colors.surface,
             )
         },
@@ -128,6 +130,7 @@ fun DoneButton() {
             Text(
                 text = stringResource(R.string.done),
                 fontSize = 24.sp,
+                fontFamily = Poppins,
                 color = MaterialTheme.colors.onSurface
             )
         }
@@ -164,7 +167,7 @@ fun SignUpPage3() {
                 modifier = Modifier
                     .padding(32.dp)
             ) {
-                Text(text = stringResource(id = R.string.set_new_password), fontWeight = FontWeight.Black, fontSize = 24.sp)
+                Text(text = stringResource(id = R.string.set_new_password), style = MaterialTheme.typography.h1)
 
                 Spacer(modifier = Modifier.height(16.dp))
                 InputYourPassword()
@@ -172,7 +175,7 @@ fun SignUpPage3() {
                 Spacer(modifier = Modifier.height(32.dp))
                 ConfirmYourPassword()
 
-                Spacer(modifier = Modifier.height(96.dp))
+                Spacer(modifier = Modifier.height(72.dp))
                 DoneButton()
             }
         }

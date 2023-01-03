@@ -20,6 +20,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.slipapp.ui.theme.Poppins
 import com.example.slipapp.ui.theme.SlipAppTheme
 
 
@@ -36,10 +37,11 @@ fun InputRegistrationID() {
             Text(
                 text = stringResource(R.string.mbcet_reg_id),
                 fontSize = 12.sp,
+                fontFamily = Poppins,
                 color = MaterialTheme.colors.surface,
             )
         },
-        placeholder = { Text(text= stringResource(R.string.placeholder_mbcet_reg_id), color = MaterialTheme.colors.surface, fontSize = 12.sp,) },
+        placeholder = { Text(text= stringResource(R.string.placeholder_mbcet_reg_id), color = MaterialTheme.colors.surface, fontSize = 12.sp) },
         colors = TextFieldDefaults.outlinedTextFieldColors(
             focusedBorderColor = MaterialTheme.colors.primary,
             unfocusedBorderColor = MaterialTheme.colors.onBackground
@@ -65,10 +67,11 @@ fun InputEmailID() {
             Text(
                 text = stringResource(id = R.string.mbcet_email_id),
                 fontSize = 12.sp,
+                fontFamily = Poppins,
                 color = MaterialTheme.colors.surface,
             )
         },
-        placeholder = { Text(text= stringResource(R.string.placeholder_mbcet_email_id), color = MaterialTheme.colors.surface, fontSize = 12.sp,) },
+        placeholder = { Text(text= stringResource(R.string.placeholder_mbcet_email_id), color = MaterialTheme.colors.surface, fontSize = 12.sp) },
         colors = TextFieldDefaults.outlinedTextFieldColors(
             focusedBorderColor = MaterialTheme.colors.primary,
             unfocusedBorderColor = MaterialTheme.colors.onBackground
@@ -94,6 +97,7 @@ fun InputFullName() {
             Text(
                 text = stringResource(id = R.string.full_name),
                 fontSize = 12.sp,
+                fontFamily = Poppins,
                 color = MaterialTheme.colors.surface,
             )
         },
@@ -122,6 +126,7 @@ fun InputMobileNumber() {
             Text(
                 text = stringResource(id = R.string.mobile_number),
                 fontSize = 12.sp,
+                fontFamily = Poppins,
                 color = MaterialTheme.colors.surface,
             )
         },
@@ -152,6 +157,7 @@ fun ProceedButton() {
             Text(
                 text = stringResource(id = R.string.proceed),
                 fontSize = 24.sp,
+                fontFamily = Poppins,
                 color = MaterialTheme.colors.onSurface
             )
         }
@@ -161,9 +167,9 @@ fun ProceedButton() {
 @Composable
 fun AccountAlreadyPresentPrompt() {
     Row(horizontalArrangement = Arrangement.Center, modifier = Modifier.fillMaxWidth()) {
-        Text(text = stringResource(R.string.already_has_account_question), fontSize = 12.sp)
+        Text(text = stringResource(R.string.already_has_account_question), fontSize = 12.sp, fontFamily = Poppins)
         Spacer(modifier = Modifier.width(2.dp))
-        Text(text = stringResource(R.string.log_in), fontSize = 12.sp, fontWeight = FontWeight.Black, modifier = Modifier.clickable(onClick = {/*TODO*/}))
+        Text(text = stringResource(R.string.log_in), fontSize = 12.sp, fontFamily = Poppins, fontWeight = FontWeight.Black, modifier = Modifier.clickable(onClick = {/*TODO*/}))
     }
 }
 
@@ -198,7 +204,7 @@ fun SignUpPage1() {
                 modifier = Modifier
                     .padding(32.dp)
             ) {
-                Text(text = stringResource(id = R.string.get_started), fontWeight = FontWeight.Black, fontSize = 24.sp)
+                Text(text = stringResource(id = R.string.get_started), style = MaterialTheme.typography.h1)
 
                 Spacer(modifier = Modifier.height(16.dp))
                 InputRegistrationID()
