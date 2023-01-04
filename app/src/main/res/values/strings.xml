@@ -1,3 +1,30 @@
 <resources>
     <string name="app_name">Slip App</string>
+    <string name="welcome_back"> Welcome Back!</string>
+    <string name="mbcet_reg_id">MBCET Registration ID</string>
+    <string name="mbcet_password">Password</string>
+    <string name="forgot_password_question">Forgot Password?</string>
+    <string name="click_if_forgot_password">Click here</string>
+    <string name="has_no_account_question">Don\'t have an account?</string>
+    <string name="click_to_sign_up">Sign Up</string>
+    <string name="login_button_text">Login</string>
+    <string name="already_has_account_question">Already have an account?</string>
+    <string name="log_in">Log in</string>
+    <string name="get_started">Let\'s\nget started</string>
+    <string name="proceed">Proceed</string>
+    <string name="mobile_number">Mobile Number</string>
+    <string name="full_name">Full Name</string>
+    <string name="mbcet_email_id">MBCET Email ID</string>
+    <string name="placeholder_mbcet_reg_id">e.g. B20CS1260</string>
+    <string name="placeholder_mbcet_email_id">e.g. abc.xyz@mbcet.ac.in</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="done">Done</string>
+    <string name="reenter_password">Re-enter password</string>
+    <string name="minimum_6_characters">Minimum 6 characters</string>
+    <string name="set_new_password">Set up a \nPassword</string>
+    <string name="resend_code">Send again</string>
+    <string name="receive_code_yet_question">Didn\'t receive yet?</string>
+    <string name="verified">Verified</string>
+    <string name="verification">Verification</string>
+    <string name="enter_verification_code">Enter the verification code \nsent to your MBCET Email ID</string>
 </resources>
