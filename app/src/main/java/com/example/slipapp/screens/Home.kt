@@ -18,6 +18,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.slipapp.R
 import com.example.slipapp.components.CategoryDataSource
+import com.example.slipapp.components.CategoryList
 import com.example.slipapp.components.PermissionCardDataSource
 import com.example.slipapp.components.PermissionsList
 import com.example.slipapp.ui.theme.SlipAppTheme
@@ -137,7 +138,7 @@ fun Home() {
             )
 
             val categories = CategoryDataSource.categories
-//            CategoryList(categories = categories)
+            CategoryList(categories = categories)
         }
     }
 }

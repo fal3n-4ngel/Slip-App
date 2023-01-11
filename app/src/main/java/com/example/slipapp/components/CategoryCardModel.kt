@@ -27,21 +27,26 @@ fun CategoryCard(
             horizontalArrangement = Arrangement.SpaceBetween,
             verticalAlignment = Alignment.CenterVertically
         ) {
-            Text(
-                text = category.content
-            )
-            TextButton(
-                onClick = { println("Text-button clicked") },
-                modifier = Modifier.width(128.dp),
-                colors = ButtonDefaults.textButtonColors(
-                    backgroundColor = MaterialTheme.colors.primary
-                ),
-                shape = RoundedCornerShape(8.dp),
-            ) {
+            Column(modifier = Modifier.weight(0.7f)) {
                 Text(
-                    text = category.buttonText,
-                    color = MaterialTheme.colors.onPrimary
+                    text = category.content
                 )
+            }
+
+            Column(modifier = Modifier.weight(0.3f)) {
+                TextButton(
+                    onClick = { println("Text-button clicked") },
+                    modifier = Modifier.width(128.dp),
+                    colors = ButtonDefaults.textButtonColors(
+                        backgroundColor = MaterialTheme.colors.primary
+                    ),
+                    shape = RoundedCornerShape(8.dp),
+                ) {
+                    Text(
+                        text = category.buttonText,
+                        color = MaterialTheme.colors.onPrimary
+                    )
+                }
             }
         }
     }
