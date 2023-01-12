@@ -1,8 +1,6 @@
 package com.example.slipapp.screens
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.ButtonDefaults
@@ -19,6 +17,10 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.slipapp.R
+import com.example.slipapp.components.CategoryDataSource
+import com.example.slipapp.components.CategoryList
+import com.example.slipapp.components.PermissionCardDataSource
+import com.example.slipapp.components.PermissionsList
 import com.example.slipapp.ui.theme.SlipAppTheme
 
 @Composable
@@ -27,6 +29,7 @@ fun Home() {
         modifier = Modifier
             .fillMaxSize()
             .background(MaterialTheme.colors.background)
+            .verticalScroll(rememberScrollState()),
     ) {
         Row(
             modifier = Modifier
@@ -109,6 +112,33 @@ fun Home() {
                     modifier = Modifier.size(128.dp)
                 )
             }
+        }
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 32.dp)
+        ) {
+
+            Text(
+                text = "Request Station",
+                style = MaterialTheme.typography.h2
+            )
+
+            val perms = PermissionCardDataSource.permissions
+            PermissionsList(perms = perms)
+        }
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(horizontal = 16.dp, vertical = 16.dp)
+        ) {
+            Text(
+                text = "Categories",
+                style = MaterialTheme.typography.h2
+            )
+
+            val categories = CategoryDataSource.categories
+            CategoryList(categories = categories)
         }
     }
 }
