@@ -1,3 +1,22 @@
 <resources>
     <string name="app_name">Slip App</string>
+
+    //Slips (Request station)
+    <string name="slip_status_accepted">Accepted</string>
+    <string name="slip_status_rejected">Rejected</string>
+    <string name="slip_status">Under Review</string>
+    <string name="slip_granted_by">--</string>
+    //Slip 1
+    <string name="slip_1_title">Permission to leave early</string>
+    <string name="slip_1_date">15 Nov 2022</string>
+    <string name="slip_1_granted_by">Dr. Dumbledore</string>
+
+    //Slip 2
+    <string name="slip_2_title">Access to Lab during Honours hours</string>
+    <string name="slip_2_date">16 Nov 2022</string>
+    <string name="slip_2_granted_by">Dr. Tom Riddle</string>
+
+    //Slip 3
+    <string name="slip_3_title">Hosting freshers day for juniors</string>
+    <string name="slip_3_date">18 Nov 2022</string>
 </resources>
