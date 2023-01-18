@@ -22,14 +22,26 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.slipapp.ui.theme.Poppins
 import com.example.slipapp.ui.theme.SlipAppTheme
+import com.example.slipapp.ui.theme.SonicSilver
 
 
 @Composable
 fun ResendCodePrompt() {
     Row(modifier = Modifier.fillMaxWidth()) {
-        Text(text = stringResource(R.string.receive_code_yet_question), fontSize = 12.sp, fontFamily = Poppins)
+        Text(
+            text = stringResource(R.string.receive_code_yet_question),
+            fontSize = 12.sp,
+            fontFamily = Poppins,
+            color = SonicSilver
+        )
         Spacer(modifier = Modifier.width(2.dp))
-        Text(text = stringResource(R.string.resend_code), fontSize = 12.sp, fontFamily = Poppins, fontWeight = FontWeight.Black, modifier = Modifier.clickable(onClick = {/*TODO*/}))
+        Text(
+            text = stringResource(R.string.resend_code),
+            fontSize = 12.sp,
+            fontFamily = Poppins,
+            fontWeight = FontWeight.Black,
+            modifier = Modifier.clickable(onClick = {/*TODO*/ })
+        )
     }
 }
 
@@ -96,7 +108,7 @@ fun InputCode() {
                 modifier = Modifier.size(outlinedTextFieldWidth, outlinedTextFieldHeight)
             )
         }
-        Column() {
+        Column {
             OutlinedTextField(
                 value = codeDigit4,
                 onValueChange = { codeDigit4 = it },
@@ -158,9 +170,11 @@ fun VerifiedButton() {
 
 @Composable
 fun SignUpPage2() {
-    Box(modifier = Modifier
-        .fillMaxSize()
-        .background(MaterialTheme.colors.surface), contentAlignment = Alignment.BottomCenter) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colors.surface), contentAlignment = Alignment.BottomCenter
+    ) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -185,10 +199,17 @@ fun SignUpPage2() {
                 modifier = Modifier
                     .padding(32.dp)
             ) {
-                Text(text = stringResource(R.string.verification), style = MaterialTheme.typography.h1)
+                Text(
+                    text = stringResource(R.string.verification),
+                    style = MaterialTheme.typography.h1
+                )
 
                 Spacer(modifier = Modifier.height(16.dp))
-                Text(text = stringResource(id = R.string.enter_verification_code), fontSize = 12.sp, style = MaterialTheme.typography.body1)
+                Text(
+                    text = stringResource(id = R.string.enter_verification_code),
+                    fontSize = 12.sp,
+                    style = MaterialTheme.typography.body1
+                )
 
                 Spacer(modifier = Modifier.height(16.dp))
                 InputCode()

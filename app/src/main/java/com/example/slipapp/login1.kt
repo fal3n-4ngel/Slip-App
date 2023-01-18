@@ -28,6 +28,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.slipapp.ui.theme.Poppins
 import com.example.slipapp.ui.theme.SlipAppTheme
+import com.example.slipapp.ui.theme.SonicSilver
 
 
 @Composable
@@ -35,12 +36,18 @@ fun EnterRegID() {
     var username by remember { mutableStateOf("") }
     OutlinedTextField(
         value = username,
-        onValueChange = { username = it
-            /*onChange*/},
+        onValueChange = {
+            username = it
+            /*onChange*/
+        },
         singleLine = true,
         leadingIcon = {
             IconButton(onClick = { /*TODO*/ }) {
-                Icon( imageVector = Icons.Filled.Email, contentDescription = null, tint = MaterialTheme.colors.surface )
+                Icon(
+                    imageVector = Icons.Filled.Email,
+                    contentDescription = null,
+                    tint = MaterialTheme.colors.surface
+                )
             }
         },
         shape = RoundedCornerShape(12.dp),
@@ -75,7 +82,11 @@ fun EnterPassword() {
         shape = RoundedCornerShape(12.dp),
         leadingIcon = {
             IconButton(onClick = { /*TODO*/ }) {
-                Icon( imageVector = Icons.Filled.Lock, contentDescription = null, tint = MaterialTheme.colors.surface )
+                Icon(
+                    imageVector = Icons.Filled.Lock,
+                    contentDescription = null,
+                    tint = MaterialTheme.colors.surface
+                )
             }
         },
         visualTransformation = if (passwordVisible) VisualTransformation.None else PasswordVisualTransformation(),
@@ -84,7 +95,11 @@ fun EnterPassword() {
                 R.drawable.ic_baseline_visibility_24
             else R.drawable.ic_baseline_visibility_off_24
             IconButton(onClick = { passwordVisible = !passwordVisible }) {
-                Icon( painter = painterResource(id = image) , contentDescription = null, tint = MaterialTheme.colors.surface)
+                Icon(
+                    painter = painterResource(id = image),
+                    contentDescription = null,
+                    tint = MaterialTheme.colors.surface
+                )
             }
         },
         label = {
@@ -132,27 +147,56 @@ fun LoginButton() {
 @Composable
 fun ForgotPasswordPrompt() {
     Row(horizontalArrangement = Arrangement.Center, modifier = Modifier.fillMaxWidth()) {
-        Text(text = stringResource(R.string.forgot_password_question), fontSize = 12.sp, fontFamily = Poppins)
+        Text(
+            text = stringResource(R.string.forgot_password_question),
+            fontSize = 12.sp,
+            fontFamily = Poppins,
+            color = SonicSilver
+        )
         Spacer(modifier = Modifier.width(2.dp))
-        Text(text = stringResource(R.string.click_if_forgot_password), fontSize = 12.sp, fontFamily = Poppins, fontWeight = FontWeight.Black, modifier = Modifier.clickable(onClick = {/*TODO*/}))
+        Text(
+            text = stringResource(R.string.click_if_forgot_password),
+            fontSize = 12.sp,
+            fontFamily = Poppins,
+            fontWeight = FontWeight.Black,
+            modifier = Modifier.clickable(onClick = {/*TODO*/ })
+        )
     }
 }
 
 @Composable
 fun SignUpPrompt() {
     Row(horizontalArrangement = Arrangement.Center, modifier = Modifier.fillMaxWidth()) {
-        Text(text = stringResource(R.string.has_no_account_question), fontFamily = Poppins, fontSize = 12.sp)
+        Text(
+            text = stringResource(R.string.has_no_account_question),
+            fontFamily = Poppins,
+            fontSize = 12.sp,
+            color = SonicSilver
+        )
         Spacer(modifier = Modifier.width(2.dp))
-        Text(text = stringResource(R.string.click_to_sign_up), fontSize = 12.sp, fontFamily = Poppins, fontWeight = FontWeight.Black, modifier = Modifier.clickable(onClick = {/*TODO*/}))
+        Text(
+            text = stringResource(R.string.click_to_sign_up),
+            fontSize = 12.sp,
+            fontFamily = Poppins,
+            fontWeight = FontWeight.Black,
+            modifier = Modifier.clickable(onClick = {/*TODO*/ })
+        )
     }
 }
 
 
 @Composable
 fun LoginPage() {
-    Box(modifier = Modifier.fillMaxSize().background(MaterialTheme.colors.surface), contentAlignment = Alignment.BottomCenter) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colors.surface),
+        contentAlignment = Alignment.BottomCenter
+    ) {
         Box(
-            modifier = Modifier.fillMaxSize().padding(top = 100.dp),
+            modifier = Modifier
+                .fillMaxSize()
+                .padding(top = 100.dp),
             contentAlignment = Alignment.TopCenter
         ) {
             Image(
@@ -173,7 +217,10 @@ fun LoginPage() {
                 modifier = Modifier
                     .padding(32.dp)
             ) {
-                Text(text = stringResource(R.string.welcome_back), style = MaterialTheme.typography.h1)
+                Text(
+                    text = stringResource(R.string.welcome_back),
+                    style = MaterialTheme.typography.h1
+                )
 
                 Spacer(modifier = Modifier.height(16.dp))
                 EnterRegID()
