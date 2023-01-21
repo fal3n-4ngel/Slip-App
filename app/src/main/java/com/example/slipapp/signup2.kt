@@ -5,6 +5,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material.*
 import androidx.compose.runtime.*
@@ -19,15 +20,28 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.slipapp.ui.theme.Poppins
 import com.example.slipapp.ui.theme.SlipAppTheme
+import com.example.slipapp.ui.theme.SonicSilver
 
 
 @Composable
 fun ResendCodePrompt() {
     Row(modifier = Modifier.fillMaxWidth()) {
-        Text(text = stringResource(R.string.receive_code_yet_question), fontSize = 12.sp)
+        Text(
+            text = stringResource(R.string.receive_code_yet_question),
+            fontSize = 12.sp,
+            fontFamily = Poppins,
+            color = SonicSilver
+        )
         Spacer(modifier = Modifier.width(2.dp))
-        Text(text = stringResource(R.string.resend_code), fontSize = 12.sp, fontWeight = FontWeight.Black, modifier = Modifier.clickable(onClick = {/*TODO*/}))
+        Text(
+            text = stringResource(R.string.resend_code),
+            fontSize = 12.sp,
+            fontFamily = Poppins,
+            fontWeight = FontWeight.Black,
+            modifier = Modifier.clickable(onClick = {/*TODO*/ })
+        )
     }
 }
 
@@ -94,7 +108,7 @@ fun InputCode() {
                 modifier = Modifier.size(outlinedTextFieldWidth, outlinedTextFieldHeight)
             )
         }
-        Column() {
+        Column {
             OutlinedTextField(
                 value = codeDigit4,
                 onValueChange = { codeDigit4 = it },
@@ -123,7 +137,10 @@ fun InputCode() {
                 ),
                 keyboardOptions = KeyboardOptions(
                     keyboardType = KeyboardType.Number,
-                    imeAction = ImeAction.Next
+                    imeAction = ImeAction.Done
+                ),
+                keyboardActions = KeyboardActions(
+                    onDone = { /*TODO - does whatever pressing verified button does */ }
                 ),
                 modifier = Modifier.size(outlinedTextFieldWidth, outlinedTextFieldHeight)
             )
@@ -143,6 +160,7 @@ fun VerifiedButton() {
             Text(
                 text = stringResource(R.string.verified),
                 fontSize = 24.sp,
+                fontFamily = Poppins,
                 color = MaterialTheme.colors.onSurface
             )
         }
@@ -152,9 +170,11 @@ fun VerifiedButton() {
 
 @Composable
 fun SignUpPage2() {
-    Box(modifier = Modifier
-        .fillMaxSize()
-        .background(MaterialTheme.colors.surface), contentAlignment = Alignment.BottomCenter) {
+    Box(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(MaterialTheme.colors.surface), contentAlignment = Alignment.BottomCenter
+    ) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
@@ -179,10 +199,17 @@ fun SignUpPage2() {
                 modifier = Modifier
                     .padding(32.dp)
             ) {
-                Text(text = stringResource(R.string.verification), fontWeight = FontWeight.Black, fontSize = 24.sp)
+                Text(
+                    text = stringResource(R.string.verification),
+                    style = MaterialTheme.typography.h1
+                )
 
                 Spacer(modifier = Modifier.height(16.dp))
-                Text(text = stringResource(id = R.string.enter_verification_code), fontSize = 12.sp)
+                Text(
+                    text = stringResource(id = R.string.enter_verification_code),
+                    fontSize = 12.sp,
+                    style = MaterialTheme.typography.body1
+                )
 
                 Spacer(modifier = Modifier.height(16.dp))
                 InputCode()
