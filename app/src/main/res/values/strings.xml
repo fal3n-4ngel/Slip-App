@@ -48,4 +48,70 @@
     <string name="verified">Verified</string>
     <string name="verification">Verification</string>
     <string name="enter_verification_code">Enter the verification code \nsent to your MBCET Email ID</string>
+
+     // ID Card
+    <string name="name">Senku Ishigami</string>
+    <string name="id">MBT1024</string>
+    <string name="clas">CSE2021</string>
+    <string name="adno">Admission No   :</string>
+    <string name="dob">Date Of Birth     :</string>
+    <string name="bldgrp">Blood Group      :</string>
+    <string name="phone">Phone Number  :</string>
+    <string name="adnod1">9696</string>
+    <string name="dobd1">06/09/2002</string>
+    <string name="bldgrpd1">RED </string>
+    <string name="phoned1">9000000006</string>
+
+    <string name="semester">S3</string>
+    <string name="Name">Name</string>
+    <string name="FillUpSlipDetails">Fill up slip details</string>
+    <string name="CreateASlip">Create a Slip</string>
+    <string name="RegNo">RegNo</string>
+    <string name="AdmnNo">AdmnNo</string>
+    <string name="CS1">CS1</string>
+    <string name="ClassTitle">Class</string>
+    <string name="SemesterTitle">Semester</string>
+    <string name="CreateSlipFooter">*This slip will submitted for approval to your department faculties</string>
+    <string name="GatePass">Gate Pass</string>
+    <string name="IDCardDuplicate">ID Card Duplicate</string>
+    <string name="ExtraClassRequest">Extra class request</string>
+    <string name="LabAccessRequest">Lab access request</string>
+    <string name="ExamGrievances">Exam Grievances</string>
+    <string name="Misc">Misc</string>
+    <string name="SendTo">Send To</string>
+    <string name="HOD">HOD</string>
+    <string name="Advisors">Advisors</string>
+    <string name="SubmitButtomText">Submit</string>
+    <string name="SelectType">Select Type</string>
+
+    <string name="slip_misc">Miscellaneous</string>
+    <string name="slip_gate">Gate Pass</string>
+    <string name="slip_id">ID Card Duplicate</string>
+    <string name="slip_lab">Lab Access Request</string>
+    <string name="slip_extra">Extra Class Request</string>
+    <string name="slip_exam">Exam Grievances</string>
+    <string name="approve_slip">Approve</string>
+    <string name="requested">Requested</string>
+    <string name="approved">Approved</string>
+    <string name="hod_cs">Dr. Tom Riddle</string>
+    <string name="name_1">Klarc Cent</string>
+    <string name="name_2">Ab Cde</string>
+    <string name="name_3">Calma Von Feincherstire</string>
+    <string name="name_4">Jacob</string>
+    <string name="name_5">Frieren</string>
+    <string name="name_6">Ariel</string>
+    <string name="disc_1">Trial And Error</string>
+    <string name="disc_2">This is to request for a new id. Unfortunately, my ID is lost, and I would like to request a replacement.</string>
+    <string name="disc_3">I am feeling fever and extreme headaches. Please excuse me for the day.</string>
+    <string name="class_1">CS 2</string>
+    <string name="advisor_1">Mr. Oogway</string>
+    <string name="advisor_2">Dr. Dumbledore</string>
+    <string name="advisor_3">Mr. Gandalf</string>
+    <string name="roll_1">B21CS1234</string>
+    <string name="class_2">CS 1</string>
+    <string name="advisor_4">Ms. Daenerys</string>
+    <string name="roll_2">B19CS1111</string>
+    <string name="roll_3">B20CS1899</string>
+    <string name="roll_4">B22CS1219</string>
+
 </resources>

@@ -8,7 +8,10 @@ import androidx.compose.material.Surface
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.example.slipapp.screens.CreateSlipLayout
+import com.example.slipapp.screens.CreateSlipLightPreview
 import com.example.slipapp.screens.Home
+import com.example.slipapp.screens.IdCard
 import com.example.slipapp.ui.theme.SlipAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,7 +23,7 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier
                         .fillMaxSize()
                 ) {
-                    Home()
+                    CreateSlipLightPreview()
                 }
             }
         }
