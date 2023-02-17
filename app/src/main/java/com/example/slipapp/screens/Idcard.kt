@@ -155,7 +155,7 @@ fun IdCard() {
             Spacer(Modifier.height(pad))
             Card(elevation = 1.dp,
                 contentColor = MaterialTheme.colors.onBackground,
-                backgroundColor = MaterialTheme.colors.onPrimary,
+                backgroundColor = Color(0xFFF8F8FF),
                 modifier = Modifier
                     .clip(shape)
                     .fillMaxWidth())

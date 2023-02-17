@@ -51,7 +51,7 @@ fun CreateSlipLightPreview() {
 
 }
 
-@Preview(showSystemUi = true, uiMode = Configuration.UI_MODE_NIGHT_YES)
+@Preview(showSystemUi = true)
 @Composable
 fun CreateSlipDarkPreview() {
 
@@ -62,160 +62,170 @@ fun CreateSlipDarkPreview() {
 @Composable
 fun CreateSlipLayout(model: SlipViewModel = viewModel()) {
     val scroll = rememberScrollState(0)
-    Card(
-        backgroundColor = MaterialTheme.colors.primary,
+    Box(
         modifier = Modifier
             .fillMaxSize()
-            .padding(all = 20.dp)
+            .background(MaterialTheme.colors.background),
+        contentAlignment = Alignment.TopCenter,
     ) {
-        Column(
+        Card(
+
+            contentColor = MaterialTheme.colors.onBackground,
+            backgroundColor = MaterialTheme.colors.secondary,
             modifier = Modifier
-                .fillMaxSize()
-                .background(color = MaterialTheme.colors.onPrimary)
-                .clip(RoundedCornerShape(40.dp))
-                .padding(horizontal = 20.dp)
-                .verticalScroll(scroll, reverseScrolling = true)
+
+                .padding(all = 20.dp)
+
+
         ) {
-            Spacer(modifier = Modifier.height(10.dp))
-            Row(
-                horizontalArrangement = Arrangement.SpaceBetween,
-                verticalAlignment = Alignment.CenterVertically,
+            Column(
                 modifier = Modifier
-                    .fillMaxWidth()
+                    .fillMaxSize()
+                    .clip(RoundedCornerShape(40.dp))
+                    .padding(horizontal = 20.dp)
+                    .verticalScroll(scroll, reverseScrolling = true)
             ) {
-                TypeSelectorDropdown(model)
-                val sdf = SimpleDateFormat("dd/MM/yyyy")
-                val currentDateAndTime = sdf.format(Date())
-                Box(
-                    contentAlignment = Alignment.Center,
+                Spacer(modifier = Modifier.height(10.dp))
+                Row(
+                    horizontalArrangement = Arrangement.SpaceBetween,
+                    verticalAlignment = Alignment.CenterVertically,
+                    modifier = Modifier
+                        .fillMaxWidth()
                 ) {
-                    Text(
-                        text = currentDateAndTime,
-                        fontSize = 12.sp,
-                        fontWeight = FontWeight.Bold,
-                    )
-                }
-            }
-            Spacer(modifier = Modifier.height(10.dp))
-            Text(
-                text = stringResource(R.string.FillUpSlipDetails),
-                fontWeight = FontWeight.Bold,
-                color = Color.Gray
-            )
-            Spacer(modifier = Modifier.height(10.dp))
-            Divider(
-                thickness = 2.dp,
-            )
-            Spacer(modifier = Modifier.height(20.dp))
-            Text(
-                text = stringResource(R.string.Name),
-                fontWeight = FontWeight.Bold,
-                color = Color.Gray
-            )
-            Text(
-                text = stringResource(id = R.string.name),
-                fontWeight = FontWeight.Bold,
-            )
-            Spacer(modifier = Modifier.height(20.dp))
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                Column(Modifier.weight(1f)) {
-                    Text(
-                        text = stringResource(R.string.RegNo),
-                        fontWeight = FontWeight.Bold,
-                        color = Color.Gray
-                    )
-                    Text(
-                        text = stringResource(id = R.string.id),
-                        fontWeight = FontWeight.Bold,
-                    )
-                }
-                Box(
-                    Modifier.weight(2f),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Column {
+                    TypeSelectorDropdown(model)
+                    val sdf = SimpleDateFormat("dd/MM/yyyy")
+                    val currentDateAndTime = sdf.format(Date())
+                    Box(
+                        contentAlignment = Alignment.Center,
+                    ) {
                         Text(
-                            text = stringResource(R.string.AdmnNo),
-                            fontWeight = FontWeight.Bold,
-                            color = Color.Gray
-                        )
-                        Text(
-                            text = stringResource(id = R.string.adnod1),
+                            text = currentDateAndTime,
+                            fontSize = 12.sp,
                             fontWeight = FontWeight.Bold,
                         )
                     }
                 }
-            }
-            Spacer(modifier = Modifier.height(20.dp))
-            Row(
-                modifier = Modifier.fillMaxWidth(),
-                horizontalArrangement = Arrangement.SpaceBetween
-            ) {
-                Column(Modifier.weight(1f)) {
-                    Text(
-                        text = stringResource(R.string.ClassTitle),
-                        fontWeight = FontWeight.Bold,
-                        color = Color.Gray
-                    )
-                    Text(
-                        text = stringResource(R.string.CS1),
-                        fontWeight = FontWeight.Bold
-                    )
-                }
-                Box(
-                    Modifier.weight(2f),
-                    contentAlignment = Alignment.Center
-                ) {
-                    Column {
-                        Text(
-                            text = stringResource(R.string.SemesterTitle),
-                            fontWeight = FontWeight.Bold,
-                            color = Color.Gray
-                        )
-                        Text(
-                            text = stringResource(R.string.semester),
-                            fontWeight = FontWeight.Bold,
-                        )
-                    }
-                }
-            }
-
-            Spacer(modifier = Modifier.height(30.dp))
-            val pathEffect = PathEffect.dashPathEffect(floatArrayOf(10f, 10f), 0f)
-            val bg = MaterialTheme.colors.background
-            val bg2 = Color.Black
-
-            Canvas(
-                Modifier
-                    .fillMaxWidth()
-                    .height(10.dp)
-            ) {
-                drawCircle(bg, 100f, center = Offset(-100f, 0f))
-                drawCircle(bg, 100f, center = Offset(size.width + 100f, 0f))
-                drawLine(
-                    color = bg2,
-                    strokeWidth = 30f,
-                    start = Offset(0f, 0f),
-                    end = Offset(size.width, 0f),
-                    pathEffect = pathEffect
+                Spacer(modifier = Modifier.height(10.dp))
+                Text(
+                    text = stringResource(R.string.FillUpSlipDetails),
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Gray
                 )
+                Spacer(modifier = Modifier.height(10.dp))
+                Divider(
+                    thickness = 2.dp,
+                )
+                Spacer(modifier = Modifier.height(20.dp))
+                Text(
+                    text = stringResource(R.string.Name),
+                    fontWeight = FontWeight.Bold,
+                    color = Color.Gray
+                )
+                Text(
+                    text = stringResource(id = R.string.name),
+                    fontWeight = FontWeight.Bold,
+                )
+                Spacer(modifier = Modifier.height(20.dp))
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Column(Modifier.weight(1f)) {
+                        Text(
+                            text = stringResource(R.string.RegNo),
+                            fontWeight = FontWeight.Bold,
+                            color = Color.Gray
+                        )
+                        Text(
+                            text = stringResource(id = R.string.id),
+                            fontWeight = FontWeight.Bold,
+                        )
+                    }
+                    Box(
+                        Modifier.weight(2f),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Column {
+                            Text(
+                                text = stringResource(R.string.AdmnNo),
+                                fontWeight = FontWeight.Bold,
+                                color = Color.Gray
+                            )
+                            Text(
+                                text = stringResource(id = R.string.adnod1),
+                                fontWeight = FontWeight.Bold,
+                            )
+                        }
+                    }
+                }
+                Spacer(modifier = Modifier.height(10.dp))
+                Row(
+                    modifier = Modifier.fillMaxWidth(),
+                    horizontalArrangement = Arrangement.SpaceBetween
+                ) {
+                    Column(Modifier.weight(1f)) {
+                        Text(
+                            text = stringResource(R.string.ClassTitle),
+                            fontWeight = FontWeight.Bold,
+                            color = Color.Gray
+                        )
+                        Text(
+                            text = stringResource(R.string.CS1),
+                            fontWeight = FontWeight.Bold
+                        )
+                    }
+                    Box(
+                        Modifier.weight(2f),
+                        contentAlignment = Alignment.Center
+                    ) {
+                        Column {
+                            Text(
+                                text = stringResource(R.string.SemesterTitle),
+                                fontWeight = FontWeight.Bold,
+                                color = Color.Gray
+                            )
+                            Text(
+                                text = stringResource(R.string.semester),
+                                fontWeight = FontWeight.Bold,
+                            )
+                        }
+                    }
+                }
+
+                Spacer(modifier = Modifier.height(20.dp))
+                val pathEffect = PathEffect.dashPathEffect(floatArrayOf(10f, 10f), 0f)
+                val bg = MaterialTheme.colors.onPrimary
+                val bg2 = MaterialTheme.colors.onPrimary
+
+                Canvas(
+                    Modifier
+                        .fillMaxWidth()
+                        .height(10.dp)
+                ) {
+                    drawCircle(bg, 100f, center = Offset(-100f, 0f))
+                    drawCircle(bg, 100f, center = Offset(size.width + 100f, 0f))
+                    drawLine(
+                        color = bg2,
+                        strokeWidth = 10f,
+                        start = Offset(0f, 0f),
+                        end = Offset(size.width, 10f),
+                        pathEffect = pathEffect
+                    )
+                }
+                Spacer(modifier = Modifier.height(20.dp))
+                InputFields(model)
+                Spacer(modifier = Modifier.height(0.dp))
+                Text(
+                    text = stringResource(R.string.CreateSlipFooter),
+                    textAlign = TextAlign.Center,
+                    color = Color.Gray,
+                    fontSize = 12.sp,
+                    modifier = Modifier
+                        .fillMaxWidth()
+                        .padding(horizontal = 10.dp)
+                )
+                Spacer(modifier = Modifier.height(10.dp))
             }
-            Spacer(modifier = Modifier.height(30.dp))
-            InputFields(model)
-            Spacer(modifier = Modifier.height(10.dp))
-            Text(
-                text = stringResource(R.string.CreateSlipFooter),
-                textAlign = TextAlign.Center,
-                color = Color.Gray,
-                fontSize = 12.sp,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .padding(horizontal = 10.dp)
-            )
-            Spacer(modifier = Modifier.height(10.dp))
         }
     }
 }
@@ -259,7 +269,8 @@ fun AppTextField(
 fun TypeSelectorDropdown(viewModel: SlipViewModel) {
     var expanded by remember { mutableStateOf(false) }
 
-    Box {
+    Box (modifier=Modifier
+        ){
         Button(onClick = { expanded = true }) {
             Text(
                 text = stringResource(viewModel.slipType),
@@ -269,6 +280,7 @@ fun TypeSelectorDropdown(viewModel: SlipViewModel) {
                 Icons.Default.ArrowDropDown,
                 contentDescription = null,
                 modifier = Modifier.size(ButtonDefaults.IconSize)
+
             )
         }
 
